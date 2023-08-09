@@ -128,13 +128,33 @@ section #text span {
   }
 }
 //section 2
-.text_2 {
+.section_2{
   position: relative;
+  left: 2%;
+  top: 0;
+
+  .text_2 h2{
+    position: absolute;
+    text-shadow: 10px 5px 50px rgba(0, 0, 0, 0.925);
+font-size: 7vw;
+ color: #ff9d00;
+ position: relative;
+   span{
+    position: absolute;
+    left: 0;
+    top:50%;
+
+  }
+  .text_2 span{
+    position: absolute;
+    top:5em;
+    font-size: 1.5em;
+    color: #ff9d00;
+    margin: 20px;
+  }
 }
-.text_2 h2 {
+#garbage{
   position: absolute;
-  transform: translateX(-282px);
-  text-shadow: 10px 5px 50px rgba(0, 0, 0, 0.781);
-  font-size: 7vw;
-  color: #ff9d00;
+  margin-top: 5%;
+}
 }

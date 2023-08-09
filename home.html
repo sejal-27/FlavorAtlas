@@ -29,24 +29,27 @@
 
       <img src="Pngs/spices-png-43492.png" alt="" class="img-2" />
     </section>
+    
     <div class="container-fluid text-center searchbar">
       <label class="search" for="inpt_search">
         <input id="inpt_search" type="text" />
       </label>
       <p>Search for meal</p>
     </div>
-
+    <div class=" container-fluid section_2 ">
     <div class="text_2" id="text_2">
-      <h2>Try these Lip smacking recipes</h2>
+      <h2>Try these Lip<span> smacking recipes </span></h2>
+    <span id="garbage">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptatibus alias harum at. Eaque suscipit error commodi ut eligendi soluta modi ipsa iste corporis tenetur, officia dignissimos odit omnis voluptate porro, officiis aspernatur totam eius? Repudiandae nobis tempore similique sed optio laborum quibusdam? Delectus eveniet omnis eum, soluta, nesciunt voluptate ipsa maiores dolore enim vel tempora eius amet quo consequatur voluptatem adipisci provident quis possimus aspernatur iste reiciendis perferendis. Distinctio esse perspiciatis eum asperiores, veniam et quis dignissimos? Commodi cumque soluta labore! Maiores quis obcaecati harum doloribus blanditiis ex, deserunt dolores molestias nihil ut dignissimos ad eum voluptatem repellat quae.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident modi sapiente optio et rerum itaque repellat nobis quis dolor atque cum assumenda, nam praesentium ad id tempore ratione eligendi eaque sint, incidunt temporibus ipsa officiis quidem! Consequatur tempore, dolore, molestias rerum, quam quia deserunt voluptatum repellat labore alias nam qui laboriosam corporis fugiat! Eveniet animi unde asperiores laudantium vel obcaecati illum voluptate tempora provident facere officia a sapiente cum dolore totam nobis cupiditate, sunt quaerat culpa minus qui consectetur. Quisquam, soluta recusandae magni ipsam error cum eos. Quasi dicta rerum numquam? Quas consectetur esse, beatae sed optio numquam possimus atque magni dolores eligendi cumque. Reprehenderit aliquid consectetur dolor minima quo veniam sequi. Provident quia animi doloribus, tempora dolores quo ullam, perferendis aliquam repellat illo laudantium deleniti sequi inventore sapiente, non culpa nam? Eius hic autem blanditiis quam ad eum, adipisci assumenda possimus harum temporibus mollitia, reiciendis eos dolore architecto accusamus minus saepe iure! Quos eum, deleniti quibusdam nobis neque inventore debitis perspiciatis, molestiae, placeat repudiandae ullam. At tempora autem totam velit accusantium veritatis dicta eligendi ipsum, quas tempore fuga eveniet earum aspernatur. Accusamus eum vero asperiores quas eos labore autem, sunt aliquam architecto. Sint sunt incidunt quasi minima quaerat a natus modi soluta nulla odio autem accusamus excepturi quas cum, esse molestiae omnis dolore! Itaque cupiditate dolorem iure id dicta modi animi, eaque, consequatur tenetur molestiae beatae atque saepe voluptas labore ducimus neque at perspiciatis ipsam adipisci aperiam? Deleniti, aspernatur iure reiciendis impedit deserunt reprehenderit perferendis placeat? Sapiente commodi, nulla laudantium praesentium in aspernatur corporis repudiandae architecto suscipit iste asperiores nemo omnis at consequatur cumque assumenda neque magnam nostrum soluta quos temporibus. Labore libero iusto quasi qui voluptates aliquam officiis minima assumenda nesciunt quam neque maiores impedit cumque hic odit animi consectetur quae repudiandae, rerum magnam aliquid, est incidunt adipisci.</span></div>
     </div>
-
     <script>
       //JS hero section
       let text = document.getElementById("text");
 
       window.addEventListener("scroll", function () {
         let value = window.scrollY;
-        text.style.top = 40 + value * -0.5 + "%";
+        text.style.top = 40 + value * -0.85 + "%";
       });
 
       //JS search bar
@@ -57,14 +60,6 @@
       $("#inpt_search").on("blur", function () {
         if ($(this).val().length == 0)
           $(this).parent("label").removeClass("active");
-      });
-
-      //Js section 2
-      let text_2 = document.getElementById("text_2");
-
-      window.addEventListener("scroll", function () {
-        let value_2 = window.scrollY;
-        text_2.style.top = 0 + value * 0.5 + "px";
       });
     </script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

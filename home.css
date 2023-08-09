@@ -129,14 +129,31 @@ section #text span {
   outline-width: 0;
 }
 
-.text_2 {
+.section_2 {
   position: relative;
+  left: 2%;
+  top: 0;
 }
-
-.text_2 h2 {
+.section_2 .text_2 h2 {
   position: absolute;
-  transform: translateX(-282px);
-  text-shadow: 10px 5px 50px rgba(0, 0, 0, 0.781);
+  text-shadow: 10px 5px 50px rgba(0, 0, 0, 0.925);
   font-size: 7vw;
   color: #ff9d00;
+  position: relative;
+}
+.section_2 .text_2 h2 span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+.section_2 .text_2 h2 .text_2 span {
+  position: absolute;
+  top: 5em;
+  font-size: 1.5em;
+  color: #ff9d00;
+  margin: 20px;
+}
+.section_2 #garbage {
+  position: absolute;
+  margin-top: 5%;
 }/*# sourceMappingURL=home.css.map */

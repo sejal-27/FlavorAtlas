@@ -128,15 +128,13 @@ section #text span {
   }
 }
 //section 2
-#text_2{
-    position: relative;
+.text_2 {
+  position: relative;
 }
-#text_2 h2{
-    position:absolute;
-       left: -100%;
-    color: #ff9d00;
-    text-shadow: 10px 5px 50px rgb(0, 0, 0);
-    font-size: 7vw;
-    transition: left 0.5s ease-in-out;
-  }
-
+.text_2 h2 {
+  position: absolute;
+  transform: translateX(-282px);
+  text-shadow: 10px 5px 50px rgba(0, 0, 0, 0.781);
+  font-size: 7vw;
+  color: #ff9d00;
+}

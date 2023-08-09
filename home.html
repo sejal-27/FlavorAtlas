@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <header id="header">
+      <a href="#" class="logo">MealFinder</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Random</a></li>
+        <li><a href="#">Filter</a></li>
+      </ul>
+    </header>
+    <section class="container-fluid">
+      <h2 id="text">
+        <span>Craving for home-like food? But don't know how to cook?</span
+        ><br />
+        We got you
+      </h2>
+
+      <img src="Pngs/spices-png-43492.png" alt="" class="img-2" />
+    </section>
+    <div class="container-fluid text-center searchbar">
+      <label class="search" for="inpt_search">
+        <input id="inpt_search" type="text" />
+      </label>
+      <p>Search for meal</p>
+    </div>
+
+    <div class="text_2" id="text_2">
+      <h2>Try these Lip smacking recipes</h2>
+    </div>
+    <div class="text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste quam quos
+      ullam eius, est similique autem suscipit minima optio eum debitis nihil
+      quod distinctio fugiat earum accusamus eaque quaerat obcaecati enim quae
+      excepturi dolorum facere aperiam accusantium. Nisi, eaque accusantium ab,
+      amet aliquam reprehenderit minus sit molestiae id itaque possimus
+      explicabo ducimus aliquid tempora labore doloribus ipsam in totam,
+      delectus expedita quo corrupti pariatur. Voluptatum velit eos iusto
+      sapiente eligendi ratione illum repellendus. Recusandae magni alias dolor
+      esse architecto odit quia consequuntur saepe, ex enim, sapiente laborum
+      sequi officiis ducimus provident deserunt aliquam, ea optio perspiciatis
+      quaerat. Fugiat, distinctio adipisci ipsum quis alias et. Autem minus,
+      dolor atque adipisci beatae molestias esse minima sunt repellat excepturi
+      ex rem voluptatem architecto fugit blanditiis eius asperiores in mollitia
+      pariatur placeat! Harum quas eligendi unde impedit exercitationem
+      consectetur quam. In sit voluptatibus excepturi quidem fugit, eveniet
+      temporibus explicabo mollitia non eius nulla eligendi distinctio, pariatur
+      inventore ea facilis, error porro? Necessitatibus dignissimos
+      perspiciatis, voluptatibus doloremque libero cupiditate soluta praesentium
+      totam illo blanditiis inventore modi consequatur cum? Itaque iusto, sed,
+      nisi quis, dolor reiciendis quas sapiente laudantium ea rerum voluptate
+      facere nesciunt assumenda deleniti quo ipsam iste officia enim dolore
+      magnam vel! Ratione ad impedit libero, natus expedita, mollitia autem
+      laudantium dicta excepturi delectus nulla dignissimos! Quia libero facere
+      a ab, nemo velit! Alias nisi iusto, voluptatum excepturi voluptatem ex hic
+      accusamus obcaecati ea, ullam vitae recusandae itaque quas unde voluptate,
+      asperiores pariatur eaque sapiente sed ad. Quisquam corrupti quos nihil
+      animi in. Dolorem.
+    </div>
+    <script>
+      //JS hero section
+      let text = document.getElementById("text");
+
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        text.style.top = 40 + value * -0.5 + "%";
+      });
+
+      //JS search bar
+      $("#inpt_search").on("focus", function () {
+        $(this).parent("label").addClass("active");
+      });
+
+      $("#inpt_search").on("blur", function () {
+        if ($(this).val().length == 0)
+          $(this).parent("label").removeClass("active");
+      });
+
+      let text_2 = document.getElementsById("text_2");
+      window.addEventListener("scroll", function () {
+        let value_2 = window.scrollY;
+        text_2.style.left = 0 + value_2 * 0.6 + "px";
+      });
+    </script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>

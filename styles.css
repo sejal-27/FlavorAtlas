@@ -1,26 +1,21 @@
+/* styles.css */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-  }
-  
-  .parallax {
-    height: 100vh;
-    background: url('parallax-image.jpg') center/cover fixed;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .parallax-content {
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-  }
-  
-  .normal-content {
-    padding: 20px;
-    background-color: #f0f0f0;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.scrolling-container {
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.scrolling-text {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.5s, transform 0.5s;
+  color: black;
+  z-index: 1;
+}

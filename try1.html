@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Card Slider Carousel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Adjust the width of the card slider */
+    #card-carousel {
+      max-width: 50%;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div id="card-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-center">
+            <div class="card">
+              <img src="https://via.placeholder.com/75" class="card-img-top" alt="Meal Image">
+              <div class="card-body">
+                <h5 class="card-title">Meal Name 1</h5>
+                <p class="card-text">Category: Category 1</p>
+                <p class="card-text">Area: Area 1</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card">
+              <img src="https://via.placeholder.com/75" class="card-img-top" alt="Meal Image">
+              <div class="card-body">
+                <h5 class="card-title">Meal Name 2</h5>
+                <p class="card-text">Category: Category 2</p>
+                <p class="card-text">Area: Area 2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex justify-content-center">
+            <div class="card">
+              <img src="https://via.placeholder.com/75" class="card-img-top" alt="Meal Image">
+              <div class="card-body">
+                <h5 class="card-title">Meal Name 3</h5>
+                <p class="card-text">Category: Category 3</p>
+                <p class="card-text">Area: Area 3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add more cards here -->
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#card-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#card-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

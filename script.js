@@ -1,14 +1,14 @@
-window.addEventListener('scroll', parallax);
+// script.js
+const scrollingText = document.querySelector(".scrolling-text");
 
-function parallax() {
- 
-  const normalContent = document.querySelector('.normal-content');
-  
-  // Calculate the parallax effect
-  let scrolled = window.pageYOffset;
-  let parallaxPosition = scrolled * 0.5; // Adjust the speed as needed
-  
-  // Apply the parallax effect to the background (move to the right)  
-  // Move the normal content in the opposite direction for a subtle effect (to the left)
-  normalContent.style.transform = `translateX(${parallaxPosition}px)`;
+function slideInText() {
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
+
+  if (scrollPosition > windowHeight / 2) {
+    scrollingText.style.opacity = "1";
+    scrollingText.style.transform = "translateX(0)";
+  }
 }
+
+window.addEventListener("scroll", slideInText);

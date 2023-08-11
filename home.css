@@ -11,7 +11,7 @@ body {
 }
 
 #header {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -49,7 +49,7 @@ body {
 section {
   position: relative;
   width: 100%;
-  margin-top: 5%;
+  margin-top: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -81,11 +81,13 @@ section #text span {
 }
 
 .searchbar {
+  position: absolute;
+  margin-top: 8em;
   transform: translateY(-50%);
   color: #ff9d00;
+  z-index: 1;
 }
-
-.search {
+.searchbar .search {
   display: inline-block;
   position: relative;
   height: 35px;
@@ -98,7 +100,7 @@ section #text span {
   transition: all 200ms ease;
   cursor: pointer;
 }
-.search:after {
+.searchbar .search:after {
   content: "";
   position: absolute;
   width: 3px;
@@ -110,21 +112,21 @@ section #text span {
   transform: rotate(-45deg);
   transition: all 200ms ease;
 }
-.search.active, .search:hover {
+.searchbar .search.active, .searchbar .search:hover {
   width: 200px;
   margin-right: 0px;
-  background: rgba(255, 157, 0, 0.862745098);
+  background: rgba(255, 168, 28, 0.1843137255);
   cursor: pointer;
 }
-.search.active:after, .search:hover:after {
+.searchbar .search.active:after, .searchbar .search:hover:after {
   height: 0px;
 }
-.search input {
+.searchbar input {
   width: 100%;
   border: none;
   font-size: 1em;
   font-weight: 500;
-  color: #20180f;
+  color: #ff9d00;
   background-color: transparent;
   outline-width: 0;
 }
@@ -180,12 +182,18 @@ section #text span {
 .card {
   background-color: #ff9d00;
   border: none;
-  margin-top: 4%;
+  margin-top: 5%;
   position: relative;
 }
 .card .card-title {
   font-size: 1.25em;
   font-weight: 500;
+}
+
+.box {
+  scale: 1.15;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 
 .bubble-background {

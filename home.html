@@ -8,6 +8,10 @@
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.css"
     />
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="home.css" />
   </head>
   <body>
@@ -25,6 +29,12 @@
         <li><a href="#">Filter</a></li>
       </ul>
     </header>
+        <div class="container-fluid text-center  searchbar">
+      <label class="search" for="inpt_search">
+        <input id="inpt_search" type="text" />
+      </label>
+      <p>Search for meal</p>
+    </div>
     <section class="container-fluid">
       <h2 id="text">
         <span>Craving for home-like food? But don't know how to cook?</span
@@ -35,12 +45,7 @@
       <img src="Pngs/spices-png-43492.png" alt="" class="img-2" />
     </section>
 
-    <div class="container-fluid text-center searchbar">
-      <label class="search" for="inpt_search">
-        <input id="inpt_search" type="text" />
-      </label>
-      <p>Search for meal</p>
-    </div>
+
 
     <div class="container-fluid section_2 scrolling-text bubble-background mb-3">
       <div class="text_2" id="text_2">
@@ -56,9 +61,9 @@
     </div>
 
     <!--Card slider-->
-    <div class="container-fluid d-flex gap-4 ">
+    <div class="container-fluid d-flex  ">
       <!-- card slider for vegetarian -->
-      <div class="container mt-1">
+      <div class="container mt-5 box ">
         <span class="carousel_heading carousel_heading_1">Vegetarian</span>
         <div
           id="card-carousel-1"
@@ -91,7 +96,7 @@
 
       <!-- card slider for non-vegetarian -->
 
-      <div class="container mt-1">
+      <div class="container mt-5 box">
         <span class="carousel_heading">Non-vegetarian</span>
         <div
           id="card-carousel-2"
@@ -123,7 +128,7 @@
       </div>
       <!-- card slider for desserts -->
 
-      <div class="container mt-1">
+      <div class="container mt-5 box">
         <span class="carousel_heading">Desserts</span>
         <div
           id="card-carousel-3"

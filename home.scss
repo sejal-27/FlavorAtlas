@@ -11,7 +11,7 @@ body {
 
 //header section
 #header {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -46,7 +46,7 @@ body {
 section {
   position: relative;
   width: 100%;
-  margin-top: 5%;
+  margin-top: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -76,9 +76,12 @@ section #text span {
 
 //searchbar
 .searchbar {
+  position: absolute;
+  margin-top: 8em;
   transform: translateY(-50%);
   color: #ff9d00;
-}
+  z-index: 1;
+
 .search {
   display: inline-block;
   position: relative;
@@ -109,12 +112,13 @@ section #text span {
   &:hover {
     width: 200px;
     margin-right: 0px;
-    background: #ff9d00dc;
+    background: #ffa81c2f;
     cursor: pointer;
 
     &:after {
       height: 0px;
     }
+  }
   }
 
   input {
@@ -122,7 +126,7 @@ section #text span {
     border: none;
     font-size: 1em;
     font-weight: 500;
-    color: #20180f;
+    color:#ff9d00;
     background-color: transparent;
     outline-width: 0;
   }
@@ -183,9 +187,7 @@ section #text span {
 .card {
   background-color: #ff9d00;
   border: none;
-  margin-top: 4%;
-  // min-width: 40%;
-  // min-height: 60%;
+  margin-top: 5%;
   position: relative;
   .card-title {
     font-size: 1.25em;
@@ -193,6 +195,13 @@ section #text span {
   }
 }
 
+.box{
+ 
+  scale:1.15;
+  margin-left: 4%;
+  margin-right: 4%;
+
+}
 // bubble--background
 .bubble-background {
   position: relative;

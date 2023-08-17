@@ -34,8 +34,7 @@ fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian")
             <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}" />
             <div class="card-body">
               <h5 class="card-title">${meal.strMeal}</h5>
-              <p class="card-text">Meal ID: ${meal.idMeal}</p>
-              <button class="btn btn-primary btn-sm view-details" data-mealid="${meal.idMeal}" data-bs-toggle="modal" data-bs-target="#mealModal">View Details</button>
+              <button class="btn btn-primary btn-sm view-details" data-mealid="${meal.idMeal}" data-bs-toggle="modal" data-bs-target="#mealModal">Get Recipe</button>
             </div>
           </div>
         </div>
@@ -58,6 +57,8 @@ fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian")
   });
 
 // Function to show modal with meal details
+// Function to show modal with meal details
+// Function to show modal with meal details
 function openMealModal(mealId) {
   // Fetch meal details using the mealId
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
@@ -66,20 +67,20 @@ function openMealModal(mealId) {
       const meal = data.meals[0];
       // Create modal content using the fetched data
       const modalHtml = `
-        <div class="modal fade" id="mealModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal" id="mealModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">${meal.strMeal}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <img src="${meal.strMealThumb}" class="img-fluid" alt="${meal.strMeal}" />
-                <p><strong>Category:</strong> ${meal.strCategory}</p>
-                <p><strong>Area:</strong> ${meal.strArea}</p>
-                <p><strong>Instructions:</strong> ${meal.strInstructions}</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <div class="data">
+                  <p><strong>Category:</strong> ${meal.strCategory}</p>
+                  <p><strong>Area:</strong> ${meal.strArea}</p>
+                  <p><strong>Instructions:</strong> ${meal.strInstructions}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -92,6 +93,14 @@ function openMealModal(mealId) {
       // Show the modal
       const modal = new bootstrap.Modal(document.getElementById("mealModal"));
       modal.show();
+
+      // Handle modal hide event to remove the backdrop
+      modal._element.addEventListener("hidden.bs.modal", function () {
+        const backdrop = document.querySelector(".modal-backdrop");
+        if (backdrop) {
+          backdrop.remove();
+        }
+      });
     })
     .catch((error) => {
       console.error("Error fetching meal details:", error);
@@ -120,8 +129,8 @@ fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken")
             <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}" />
             <div class="card-body">
               <h5 class="card-title">${meal.strMeal}</h5>
-              <p class="card-text">Meal ID: ${meal.idMeal}</p>
-              <button class="btn btn-primary btn-sm view-details" data-mealid="${meal.idMeal}" data-bs-toggle="modal" data-bs-target="#mealModal">View Details</button>
+             
+              <button class="btn btn-primary btn-sm view-details" data-mealid="${meal.idMeal}" data-bs-toggle="modal" data-bs-target="#mealModal">Get Recipe</button>
             </div>
           </div>
         </div>
@@ -157,16 +166,18 @@ function openMealModal(mealId) {
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">${meal.strMeal}</h5>
-              </div>
-              <div class="modal-body">
-                <img src="${meal.strMealThumb}" class="img-fluid" alt="${meal.strMeal}" />
-                <p><strong>Category:</strong> ${meal.strCategory}</p>
-                <p><strong>Area:</strong> ${meal.strArea}</p>
-                <p><strong>Instructions:</strong> ${meal.strInstructions}</p>
-              </div>
-              <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
+              <div class="modal-body">
+              
+                <img src="${meal.strMealThumb}" class="img-fluid" alt="${meal.strMeal}" />
+                <div class="data"><p><strong>Category:</strong> ${meal.strCategory}</p>
+                <p><strong>Area:</strong> ${meal.strArea}</p>
+                <p><strong>Instructions:</strong> ${meal.strInstructions}</p>
+              </div></div>
+             
+                
+      
             </div>
           </div>
         </div>
@@ -183,38 +194,6 @@ function openMealModal(mealId) {
       console.error("Error fetching meal details:", error);
     });
 }
-
-// fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken")
-//   .then((response) => response.json()) // Parse the response as JSON
-//   .then((data) => {
-//     const carouselInner = document.querySelector(
-//       "#card-carousel-2 .carousel-inner"
-//     );
-
-// Clear any existing content
-//     carouselInner.innerHTML = "";
-
-// Loop through the meals and create carousel cards
-//     data.meals.forEach((meal, index) => {
-//       const carouselItemClass =
-//         index === 0 ? "carousel-item active" : "carousel-item";
-//       const cardHtml = `
-//     <div class="${carouselItemClass}">
-//       <div class="card">
-//         <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}" />
-//         <div class="card-body">
-//           <h5 class="card-title">${meal.strMeal}</h5>
-//           <p class="card-text">Meal ID: ${meal.idMeal}</p>
-//         </div>
-//       </div>
-//     </div>
-//   `;
-//       carouselInner.innerHTML += cardHtml;
-//     });
-//   })
-//   .catch((error) => {
-//     console.error("Error fetching API data:", error);
-//   });
 
 // Fetching the API data for Desserts
 fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")
@@ -237,8 +216,8 @@ fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")
             <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}" />
             <div class="card-body">
               <h5 class="card-title">${meal.strMeal}</h5>
-              <p class="card-text">Meal ID: ${meal.idMeal}</p>
-              <button class="btn btn-primary btn-sm view-details" data-mealid="${meal.idMeal}" data-bs-toggle="modal" data-bs-target="#mealModal">View Details</button>
+              
+              <button class="btn btn-primary btn-sm view-details" data-mealid="${meal.idMeal}" data-bs-toggle="modal" data-bs-target="#mealModal">Get Recipe</button>
             </div>
           </div>
         </div>
@@ -274,17 +253,15 @@ function openMealModal(mealId) {
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">${meal.strMeal}</h5>
+                 <button type="button" class="btn btn-flip"  data-bs-dismiss="modal" data-back="Close" data-front="Close"></button>
               </div>
               <div class="modal-body">
                 <img src="${meal.strMealThumb}" class="img-fluid" alt="${meal.strMeal}" />
-                <p><strong>Category:</strong> ${meal.strCategory}</p>
+                <div class="data"><p><strong>Category:</strong> ${meal.strCategory}</p>
                 <p><strong>Area:</strong> ${meal.strArea}</p>
                 <p><strong>Instructions:</strong> ${meal.strInstructions}</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
+             
+            </div></div></div>
           </div>
         </div>
       `;

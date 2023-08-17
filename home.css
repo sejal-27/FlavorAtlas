@@ -188,9 +188,48 @@ section #text span {
   margin-top: 5%;
   position: relative;
 }
-.card .card-title {
+.card .card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card .card-body .card-title {
   font-size: 1.25em;
-  font-weight: 500;
+  font-weight: 700;
+}
+.card .card-body .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background-color: #ffc568;
+  color: #20180f;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1em;
+}
+.card .card-body .btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.1568627451);
+  border-radius: 50%;
+  opacity: 1;
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+}
+.card .card-body .btn:hover::before {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
 }
 
 .box {

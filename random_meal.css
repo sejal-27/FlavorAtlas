@@ -1,0 +1,207 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #241104;
+  box-sizing: border-box;
+}
+
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #241104;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+.pan-loader {
+  width: 180px;
+  height: 180px;
+}
+.pan-loader .loader {
+  position: relative;
+  top: 10%;
+  left: 0;
+  z-index: -1;
+  width: 50%;
+  height: 45%;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #fdd835;
+  border-radius: 50%;
+  animation: loader 2s infinite;
+  animation-timing-function: linear;
+}
+.pan-loader .pan-container {
+  display: flex;
+  width: 100%;
+  animation: pan 2s infinite;
+}
+.pan-loader .pan {
+  width: 60%;
+  height: 20px;
+  background: linear-gradient(#b9602c, #fa5f17);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.pan-loader .handle {
+  width: 40%;
+  height: 10px;
+  background: linear-gradient(#b9602c, #fa5f17);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.pan-loader .shadow {
+  position: relative;
+  top: 15%;
+  left: 15%;
+  width: 30%;
+  height: 8px;
+  background: rgb(212, 212, 212);
+  border-radius: 20px;
+  animation: shadow 2s infinite;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: cursive;
+  color: #ffc361;
+}
+
+.container-fluid {
+  max-width: 900px;
+  text-align: center;
+  z-index: 1;
+  color: #ff9d00;
+}
+
+.meal-card {
+  border-radius: 15px;
+  background-color: #ffbf58;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.meal-img {
+  height: 95vh;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.meal-info {
+  padding: 10px;
+  margin: 20px;
+  background-color: #fad8a2;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 2em;
+  color: #241104;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#meal-category {
+  color: #241104;
+  font-size: 1.5em;
+  margin: 2%;
+  font-weight: 500;
+}
+
+#meal-instructions {
+  font-size: 1.15em;
+  text-align: justify;
+}
+
+.button {
+  background-color: #ff8800;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: ease-in 0.5s all;
+}
+.button:hover {
+  scale: 0.9;
+  background-color: rgba(0, 0, 0, 0.192);
+}
+
+@keyframes loader {
+  0% {
+    width: 10%;
+    transform: rotate(0deg);
+  }
+  10% {
+    left: 0%;
+    transform: rotate(0deg);
+  }
+  20% {
+    width: 0%;
+    left: 20%;
+  }
+  30% {
+    width: 25%;
+  }
+  50% {
+    left: 15%;
+    width: 35%;
+  }
+  70% {
+    width: 30%;
+    left: 18%;
+    transform: rotate(340deg);
+  }
+  90% {
+    width: 30%;
+    left: 10%;
+  }
+  100% {
+    width: 2%;
+    left: 25%;
+    transform: rotate(360deg);
+  }
+}
+@keyframes pan {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top right;
+  }
+  10% {
+    transform: rotate(-2deg);
+    transform-origin: top right;
+  }
+  50% {
+    transform: rotate(18deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes shadow {
+  0% {
+    width: 30%;
+  }
+  50% {
+    width: 40%;
+    left: 20px;
+  }
+  100% {
+    width: 30%;
+  }
+}/*# sourceMappingURL=random_meal.css.map */

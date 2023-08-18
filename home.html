@@ -10,37 +10,44 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="home.css" />
   </head>
   <body>
-    <div id="loading-overlay">
+    <!-- <div id="loading-overlay">
       <div class="loader-container">
         <canvas id="pizza"></canvas>
       </div>
-    </div>
-    <div class="container">
+    </div> -->
+    <div class="container-fluid">
       <header id="header">
         <a href="#" class="logo">MealFinder</a>
         <ul>
+          <li><form action="" >
+  <input type="search" placeholder="Search Here">
+  <i class="fa fa-search"></i>
+</form></li>
           <li class="btn from-top"><a href="#header">Home</a></li>
           <li class="btn from-top"><a href="#recipies">Recipes</a></li>
-          <li class="btn from-top"><a href="#">Get a random meal</a></li>
+          <li class="btn from-top">
+            <a href="random_meal.html">Get a random meal</a>
+          </li>
           <li class="btn from-top"><a href="#">Filter</a></li>
         </ul>
       </header>
     </div>
-    <div
-      class="container d-flex align-items-center justify-content-center searchbar"
-    >
-      <label class="search" for="inpt_search">
-        <input id="inpt_search" type="text" />
-        <p>Search here</p>
-      </label>
-    </div>
+
+    
     <section class="container">
-      <h2 id="text">
+      <h2 id="text" >
         <span>Craving for home-like food? But don't know how to cook?</span
         ><br />
 

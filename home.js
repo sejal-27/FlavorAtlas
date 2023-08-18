@@ -6,64 +6,7 @@ window.addEventListener("scroll", function () {
 
   text.style.top = 40 + value * -0.85 + "%";
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Fetch data and create carousel cards for Vegetarian meals
-//   fetchAndCreateCards("Vegetarian", "card-carousel-1");
-
-//   // Fetch data and create carousel cards for Non-Vegetarian meals
-//   fetchAndCreateCards("Chicken", "card-carousel-2");
-
-//   // Fetch data and create carousel cards for Dessert meals
-//   fetchAndCreateCards("Dessert", "card-carousel-3");
-// });
-
-// function fetchAndCreateCards(category, carouselId) {
-//   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const carouselInner = document.querySelector(
-//         `#${carouselId} .carousel-inner`
-//       );
-//       carouselInner.innerHTML = "";
-
-//       data.meals.forEach((meal, index) => {
-//         const carouselItemClass =
-//           index === 0 ? "carousel-item active" : "carousel-item";
-//         const cardHtml = `
-//           <div class="${carouselItemClass}">
-//             <div class="card">
-//               <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}" />
-//               <div class="card-body">
-//                 <h5 class="card-title">${meal.strMeal}</h5>
-//                 <button class="btn btn-primary btn-sm view-details" data-mealid="${meal.idMeal}" data-bs-toggle="modal" data-bs-target="#mealModal">Get Recipe</button>
-//               </div>
-//             </div>
-//           </div>
-//         `;
-//         carouselInner.innerHTML += cardHtml;
-//       });
-
-//       const viewDetailsButtons = document.querySelectorAll(
-//         `#${carouselId} .view-details`
-//       );
-//       viewDetailsButtons[0].addEventListener("click", (event) => {
-//           const mealId = event.target.getAttribute("data-mealid");
-//           openMealDetailsPage(mealId);
-//         });
-//     })
-//     .catch((error) => {
-//       console.error(`Error fetching ${category} API data:`, error);
-//     });
-// }
-
-// function openMealDetailsPage(mealId) {
-
-//   window.location.href = `meal-details.html?mealId=${mealId}`;
-// }
-
 // carousel
-// Fetch the API data for Vegetarian meals
 // Fetch data and create carousel cards
 document.addEventListener("DOMContentLoaded", function () {
   // Fetch data and create carousel cards for Vegetarian meals
@@ -117,6 +60,10 @@ function fetchAndCreateCards(category, carouselId) {
     });
 }
 
+function removePrevModal() {
+  document.getElementById("modal-container").innerHTML = "";
+}
+
 function openMealModal(mealId) {
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
     .then((response) => response.json())
@@ -124,11 +71,11 @@ function openMealModal(mealId) {
       const meal = data.meals[0];
       const modalHtml = `
         <div class="modal fade" id="mealModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
+          <div class="modal-dialog modal-xl">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">${meal.strMeal}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close" onclick="removePrevModal()"></button>
               </div>
               <div class="modal-body">
                 <img src="${meal.strMealThumb}" class="img-fluid" alt="${meal.strMeal}" />
@@ -144,7 +91,7 @@ function openMealModal(mealId) {
       `;
 
       const modalContainer = document.getElementById("modal-container");
-      modalContainer.innerHTML = "";
+      // modalContainer.innerHTML = "";
       modalContainer.innerHTML = modalHtml;
 
       const modal = new bootstrap.Modal(document.getElementById("mealModal"));

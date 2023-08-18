@@ -61,7 +61,11 @@ function fetchAndCreateCards(category, carouselId) {
 }
 
 function removePrevModal() {
-  document.getElementById("modal-container").innerHTML = "";
+  const modalContent = document.querySelector(".modal-content");
+  document.querySelector(".modal-content").classList.add("rollOut");
+  setTimeout(() => {
+    document.getElementById("modal-container").innerHTML = "";
+  }, 500);
 }
 
 function openMealModal(mealId) {
@@ -70,8 +74,8 @@ function openMealModal(mealId) {
     .then((data) => {
       const meal = data.meals[0];
       const modalHtml = `
-        <div class="modal fade" id="mealModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-xl">
+        <div class="modal fade " id="mealModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl ">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">${meal.strMeal}</h5>
@@ -96,6 +100,9 @@ function openMealModal(mealId) {
 
       const modal = new bootstrap.Modal(document.getElementById("mealModal"));
       modal.show();
+
+      const modalContent = document.querySelector(".modal-content");
+      modalContent.classList.add("rollIn");
 
       modal._element.addEventListener("hidden.bs.modal", function () {
         document.body.style.overflow = "auto";
@@ -250,5 +257,5 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     loadingOverlay.style.display = "none";
     document.body.classList.remove("loading");
-  }, 3500);
+  }, 1500);
 });

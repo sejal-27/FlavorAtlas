@@ -259,3 +259,67 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.remove("loading");
   }, 1500);
 });
+
+//searchbar
+document.addEventListener("DOMContentLoaded", function () {
+  const searchForm = document.getElementById("search-form");
+  const searchInput = document.getElementById("search-input");
+
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const searchTerm = searchInput.value.trim();
+    if (searchTerm !== "") {
+      // Navigate to the new page with the search term as a parameter
+      window.location.href = `search-results.html?searchTerm=${encodeURIComponent(
+        searchTerm
+      )}`;
+    }
+  });
+});
+
+//datalist
+const suggestionsList = document.getElementById("suggestions");
+const searchInput = document.getElementById("search-input");
+searchInput.addEventListener("input", async () => {
+  const query = searchInput.value.trim();
+
+  if (query.length > 1) {
+    const response = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
+    );
+    const data = await response.json();
+
+    if (data.meals) {
+      const mealNames = data.meals.map((meal) => meal.strMeal);
+      populateSuggestions(mealNames);
+    }
+  } else {
+    clearSuggestions();
+  }
+});
+
+function populateSuggestions(suggestions) {
+  suggestionsList.innerHTML = "";
+  suggestions.forEach((suggestion) => {
+    const option = document.createElement("option");
+    option.value = suggestion;
+    suggestionsList.appendChild(option);
+  });
+}
+
+function clearSuggestions() {
+  suggestionsList.innerHTML = "";
+}
+
+function populateSuggestions(suggestions) {
+  suggestionsList.innerHTML = "";
+  suggestions.forEach((suggestion) => {
+    const option = document.createElement("option");
+    option.value = suggestion;
+    suggestionsList.appendChild(option);
+  });
+}
+
+function clearSuggestions() {
+  suggestionsList.innerHTML = "";
+}

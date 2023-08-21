@@ -31,10 +31,22 @@
       <header id="header">
         <a href="#" class="logo">MealFinder</a>
         <ul>
-          <li><form action="" >
-  <input type="search" placeholder="Search Here">
-  <i class="fa fa-search"></i>
-</form></li>
+          <li>
+            <form id="search-form" class="d-flex">
+              <input
+                type="search"
+                placeholder="Search Meals"
+                id="search-input"
+                class="form-control me-2"
+                autocomplete="off"
+                list="suggestions"
+              />
+              <datalist id="suggestions"  class="custom-datalist"></datalist>
+              <button type="submit" class="btn btn1 ms-3">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </li>
           <li class="btn from-top"><a href="#header">Home</a></li>
           <li class="btn from-top"><a href="#recipies">Recipes</a></li>
           <li class="btn from-top">
@@ -44,23 +56,17 @@
         </ul>
       </header>
     </div>
-
-    
     <section class="container">
-      <h2 id="text" >
+      <h2 id="text">
         <span>Craving for home-like food? But don't know how to cook?</span
         ><br />
-
         We got you
       </h2>
-
       <img src="Pngs/spices-png-43492.png" alt="" class="img-2" />
     </section>
-
     <div class="container section_2 scrolling-text bubble-background mb-3">
       <div class="text_2" id="text_2">
         <h2 id="recipies">Try these Lip smacking recipes</h2>
-
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -68,7 +74,6 @@
         <div class="bubble"></div>
       </div>
     </div>
-
     <!--Card slider-->
     <div class="container-fluid d-flex position-relative">
       <!-- card slider for vegetarian -->

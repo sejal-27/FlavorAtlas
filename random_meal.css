@@ -139,7 +139,7 @@ h2 {
 }
 .button:hover {
   scale: 0.9;
-  background-color: rgba(0, 0, 0, 0.192);
+  background-color: rgb(153, 82, 0);
 }
 
 @keyframes loader {

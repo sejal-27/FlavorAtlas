@@ -41,8 +41,6 @@ function displayLoaderWithDuration(duration) {
 
 displayLoaderWithDuration(2000);
 
-
-
 function fetchRandomMeal() {
   return fetch("https://www.themealdb.com/api/json/v1/1/random.php")
     .then((response) => response.json())
@@ -54,12 +52,30 @@ function updateMealCard(mealData) {
   const mealName = document.getElementById("meal-name");
   const mealCategory = document.getElementById("meal-category");
   const mealInstructions = document.getElementById("meal-instructions");
+  const mealIngredients = document.getElementById("meal-ingredients"); 
+
   mealImg.style.backgroundImage = `url(${mealData.strMealThumb})`;
   mealName.textContent = mealData.strMeal;
   mealCategory.textContent = `Category: ${mealData.strCategory}`;
-  mealInstructions.textContent = mealData.strInstructions;
-}
+  mealInstructions.textContent = `Instructions: ${mealData.strInstructions}`;
 
+  // Clear existing ingredients
+  mealIngredients.innerHTML = "";
+  mealIngredients.innerHTML="Ingredients:";
+  // Loop through the ingredients and measures and add them to the list
+  for (let i = 1; i <= 20; i++) {
+    const ingredient = mealData[`strIngredient${i}`];
+    const measure = mealData[`strMeasure${i}`];
+
+    if (ingredient && measure) {
+      const ingredientItem = document.createElement("li");
+      ingredientItem.textContent = `${ingredient} - ${measure}`;
+      mealIngredients.appendChild(ingredientItem);
+    } else {
+      break; // Exit the loop if ingredient or measure is empty
+    }
+  }
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const loadingOverlay = document.getElementById("loading-overlay");

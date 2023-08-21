@@ -180,13 +180,6 @@ section #text span {
   transition: all 0.25s;
 }
 
-/* Custom datalist styling */
-.custom-datalist {
-  display: block !important;
-  z-index: 9999;
-  margin-top: 30px;
-}
-
 .section_2 {
   left: 2%;
   top: 0;

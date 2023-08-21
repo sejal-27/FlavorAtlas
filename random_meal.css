@@ -204,4 +204,104 @@ h2 {
   100% {
     width: 30%;
   }
+}
+.section_2 {
+  left: 2%;
+  top: 0;
+}
+.section_2 .text_2 h2 {
+  text-shadow: 10px 5px 50px rgba(0, 0, 0, 0.925);
+  font-size: 3vw;
+  margin-left: 20px;
+  color: #ff9d00;
+  position: relative;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-2%);
+  }
+}
+.scrolling-text {
+  opacity: 0;
+  animation: slideInFromLeft 3s ease forwards;
+  color: #ff9d00;
+  padding: 20px;
+  z-index: 1;
+}
+
+@keyframes slideInFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.bubble-background {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes bubbleAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30%);
+  }
+}
+.bubble {
+  position: absolute;
+  background-color: rgba(255, 157, 0, 0.3490196078);
+  border-radius: 50%;
+  animation: bubbleAnimation 5s linear infinite alternate;
+}
+
+.bubble:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  left: 5%;
+  bottom: 0%;
+  top: 20%;
+  animation-duration: 1s;
+}
+
+.bubble:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  animation-duration: 2s;
+  left: 70%;
+  bottom: 0%;
+}
+
+.bubble:nth-child(4) {
+  width: 40px;
+  height: 40px;
+  bottom: 0%;
+  left: 50%;
+  top: 20%;
+  animation-duration: 3.5s;
+}
+
+.bubble:nth-child(5) {
+  width: 60px;
+  height: 60px;
+  left: 40%;
+  bottom: 40%;
+  top: 25%;
+  animation-duration: 3.5s;
+}
+
+.bubble:nth-child(6) {
+  width: 40px;
+  height: 40px;
+  left: 60%;
+  bottom: 0%;
+  animation-duration: 2.5s;
 }/*# sourceMappingURL=random_meal.css.map */

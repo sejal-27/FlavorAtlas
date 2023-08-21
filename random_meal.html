@@ -11,25 +11,34 @@
     <link rel="stylesheet" href="random_meal.css" />
   </head>
   <body>
-    
+    <div class="bubble-background">
       <div class="loader-container" id="loader-container"></div>
-    
-    <div class="container-fluid">
-      <h1 class="mt-5">Here's your meal and it's recipe!</h1>
-      <div class="card mt-4 meal-card" id="meal-card">
-        <div class="card-body  text-center">
-          <div class="meal-img img-fluid" id="meal-img"></div>
-          <div class="meal-info" id="meal-info">
-            <h2 class="card-title" id="meal-name"></h2>
-            <p class="card-text" id="meal-category"></p>
-            <p class="card-text" id="meal-instructions"></p>
+
+      <div class="container-fluid">
+        <div class="container section_2 scrolling-text bubble-background mt-3">
+          <div class="text_2" id="text_2">
+            <h2 id="recipies">Here's your meal and it's recipe!</h2>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
           </div>
-           <button class="btn button mt-4" id="fetch-random-meal">
-        Fetch Random Meal
-      </button>
+        </div>
+        <div class="card mt-4 meal-card" id="meal-card">
+          <div class="card-body text-center">
+            <div class="meal-img img-fluid" id="meal-img"></div>
+            <div class="meal-info" id="meal-info">
+              <h2 class="card-title" id="meal-name"></h2>
+              <p class="card-text" id="meal-category"></p>
+              <p class="card-text" id="meal-instructions"></p>
+            </div>
+            <button class="btn button mt-4" id="fetch-random-meal">
+              Fetch another meal
+            </button>
+          </div>
         </div>
       </div>
-     
     </div>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="random_meal.js"></script>

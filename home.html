@@ -27,9 +27,11 @@
         <canvas id="pizza"></canvas>
       </div>
     </div>
-    <div class="container-fluid">
-      <header id="header">
-        <a href="#" class="logo">MealFinder</a>
+    <div class="header" id="header">
+      <div class="logo">
+        <a href="#home"><img src="Images/Artboard 1.png" /></a>
+      </div>
+      <div class="header_content">
         <ul>
           <li>
             <form id="search-form" class="d-flex">
@@ -41,7 +43,7 @@
                 autocomplete="off"
                 list="suggestions"
               />
-              <datalist id="suggestions"  class="custom-datalist"></datalist>
+              <datalist id="suggestions" class="custom-datalist"></datalist>
               <button type="submit" class="btn btn1 ms-3">
                 <i class="fa fa-search"></i>
               </button>
@@ -50,139 +52,166 @@
           <li class="btn from-top"><a href="#header">Home</a></li>
           <li class="btn from-top"><a href="#recipies">Recipes</a></li>
           <li class="btn from-top">
-            <a href="random_meal.html">Get a random meal</a>
+            <a href="random_meal.html"
+              ><i class="fa-solid fa-dice" style="color: #ffc361; scale: 2"></i
+            ></a>
           </li>
-          <li class="btn from-top"><a href="#">Filter</a></li>
+          <!-- <li class="btn from-top"><a href="#">Filter</a></li> -->
         </ul>
-      </header>
+      </div>
     </div>
-    <section class="container">
+    <section>
       <h2 id="text">
         <span>Craving for home-like food? But don't know how to cook?</span
         ><br />
         We got you
       </h2>
-      <img src="Pngs/spices-png-43492.png" alt="" class="img-2" />
+      <img src="Pngs/spices-png-43492.png" alt="" class="img-2 img-fluid" />
     </section>
-    <div class="container section_2 scrolling-text bubble-background mb-3">
-      <div class="text_2" id="text_2">
-        <h2 id="recipies">Try these Lip smacking recipes</h2>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-      </div>
-    </div>
-    <!--Card slider-->
-    <div class="container-fluid d-flex position-relative">
-      <!-- card slider for vegetarian -->
-      <div class="container mt-5 box">
-        <span class="carousel_heading carousel_heading_1">Vegetarian</span>
-        <div
-          id="card-carousel-1"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <!-- Add more cards here -->
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#card-carousel-1"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#card-carousel-1"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+    <div class="container-fluid section_2 mb-3">
+      <div class="scrolling-text bubble-background">
+        <div class="text_2" id="text_2">
+          <h2 id="recipies">Try these Lip smacking recipes</h2>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
         </div>
       </div>
-      <div id="modal-container"></div>
 
-      <!-- card slider for non-vegetarian -->
-      <div class="container mt-5 box">
-        <span class="carousel_heading carousel_heading_1">Non-vegetarian</span>
-        <div
-          id="card-carousel-2"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <!-- Add more cards here -->
+      <!--Card slider-->
+      <div
+        class="container-fluid d-flex flex-sm-column flex-md-row flex-lg-row flex-xl-row flex-xxl-row"
+      >
+        <!-- card slider for vegetarian -->
+        <div class="container mt-5 box">
+          <span class="carousel_heading carousel_heading_1">Vegetarian</span>
+          <div
+            id="card-carousel-1"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <!-- Add more cards here -->
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#card-carousel-1"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#card-carousel-1"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#card-carousel-2"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#card-carousel-2"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
-      </div>
-      <div id="modal-container"></div>
+        <div id="modal-container"></div>
 
-      <!-- card slider for desserts -->
-      <div class="container mt-5 box">
-        <span class="carousel_heading carousel_heading_1">Desserts</span>
-        <div
-          id="card-carousel-3"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <!-- Add more cards here -->
+        <!-- card slider for non-vegetarian -->
+        <div class="container mt-5 box">
+          <span class="carousel_heading carousel_heading_1"
+            >Non-vegetarian</span
+          >
+          <div
+            id="card-carousel-2"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <!-- Add more cards here -->
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#card-carousel-2"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#card-carousel-2"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#card-carousel-3"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#card-carousel-3"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
+        <div id="modal-container"></div>
+
+        <!-- card slider for desserts -->
+        <div class="container mt-5 box">
+          <span class="carousel_heading carousel_heading_1">Desserts</span>
+          <div
+            id="card-carousel-3"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <!-- Add more cards here -->
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#card-carousel-3"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#card-carousel-3"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div id="modal-container"></div>
       </div>
-      <div id="modal-container"></div>
     </div>
     <!-- footer -->
     <div class="footer">
       <img
-        class="mainimg"
+        class="mainimg img-fluid"
         src="Pngs/kisspng-table-ice-cream-cone-food-drink-a-table-of-food-5a9811c03b0456.0613783615199154562417.png"
       />
       <img
-        class="tableimg"
+        class="tableimg img-fluid"
         src="Pngs/kisspng-table-floor-wood-stain-plywood-hd-desktop-wood-material-free-download-5aa1ff280bc156.7334948815205660560482.png"
         alt=""
       />

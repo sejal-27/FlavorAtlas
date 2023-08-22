@@ -32,15 +32,16 @@ function fetchAndCreateCards(category, carouselId) {
         const carouselItemClass =
           index === 0 ? "carousel-item active" : "carousel-item";
         const cardHtml = `
-          <div class="${carouselItemClass}">
-            <div class="card">
-              <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}" />
-              <div class="card-body">
-                <h5 class="card-title">${meal.strMeal}</h5>
-                <button class="btn btn-primary btn-sm view-details" data-mealid="${meal.idMeal}" data-bs-toggle="modal" data-bs-target="#mealModal">Get Recipe</button>
-              </div>
-            </div>
-          </div>
+         <div class="${carouselItemClass} col-md-4 col-sm-6">
+  <div class="card">
+    <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}" />
+    <div class="card-body">
+      <h5 class="card-title">${meal.strMeal}</h5>
+      <button class="btn btn-primary btn-sm view-details" data-mealid="${meal.idMeal}" data-bs-toggle="modal" data-bs-target="#mealModal">Get Recipe</button>
+    </div>
+  </div>
+</div>
+
         `;
         carouselInner.innerHTML += cardHtml;
       });

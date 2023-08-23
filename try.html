@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Scrolling Text Effect</title>
-</head>
-<body>
-  <div class="scrolling-container">
-    <p class="scrolling-text ">Text that appears from the left on scroll...</p>
-  </div>
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Scrolling Text Effect</title>
+  </head>
+  <body>
+    <div class="scrolling-container">
+      <p class="scrolling-text">Text that appears from the left on scroll...</p>
+    </div>
+    <div class="card mt-4 meal-card" id="meal-card">
+      <div class="card-body text-center">
+        <div class="meal-img img-fluid" id="meal-img">
+          <img
+            src="${
+              meal.strMealThumb
+            }"
+            alt="${meal.strMeal}"
+          />
+        </div>
+        <div class="meal-info" id="meal-info">
+          <h2 class="card-title" id="meal-name">${meal.strMeal}</h2>
+          <p class="card-text" id="meal-category">
+            Category: ${ meal.strCategory }
+          </p>
+          <p class="card-text" id="meal-ingredients">
+            ${getIngredients( meal )}
+          </p>
+          <p class="card-text" id="meal-instructions">
+            ${ meal.strInstructions}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="card mt-4 meal-card" id="meal-card">
+      <div class="card-body text-center">
+        <div class="meal-img img-fluid" id="meal-img">
+          <img
+            src="${
+              meal.strMealThumb
+            }"
+            alt="${meal.strMeal}"
+          />
+        </div>
+        <div class="meal-info" id="meal-info">
+          <h2 class="card-title" id="meal-name">${meal.strMeal}</h2>
+          <p class="card-text" id="meal-category">
+            Category: ${ meal.strCategory }
+          </p>
+          <p class="card-text" id="meal-ingredients">
+            ${getIngredients( meal )}
+          </p>
+          <p class="card-text" id="meal-instructions">
+            ${ meal.strInstructions}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

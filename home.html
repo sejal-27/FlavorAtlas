@@ -33,22 +33,6 @@
       </div>
       <div class="header_content">
         <ul>
-          <li>
-            <form id="search-form" class="d-flex">
-              <input
-                type="search"
-                placeholder="Search Meals"
-                id="search-input"
-                class="form-control me-2"
-                autocomplete="off"
-                list="suggestions"
-              />
-              <datalist id="suggestions" class="custom-datalist"></datalist>
-              <button type="submit" class="btn btn1 ms-3">
-                <i class="fa fa-search"></i>
-              </button>
-            </form>
-          </li>
           <li class="btn from-top"><a href="#header">Home</a></li>
           <li class="btn from-top"><a href="#recipies">Recipes</a></li>
           <li class="btn from-top">
@@ -60,7 +44,23 @@
         </ul>
       </div>
     </div>
+    <form id="search-form" class="container-fluid d-flex text-center">
+      <input
+        type="search"
+        placeholder="Search Meals"
+        id="search-input"
+        class="form-control me-2"
+        autocomplete="off"
+        list="suggestions"
+      />
+      <datalist id="suggestions" class="custom-datalist"></datalist>
+      <button type="submit" class="btn btn1 ms-3">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+
     <section>
+      
       <h2 id="text">
         <span>Craving for home-like food? But don't know how to cook?</span
         ><br />
@@ -82,11 +82,11 @@
 
       <!--Card slider-->
       <div
-        class="container-fluid d-flex flex-sm-column flex-md-row flex-lg-row flex-xl-row flex-xxl-row"
+        class="container-fluid d-flex flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row align-items-center justify-content-center box_carousel"
       >
         <!-- card slider for vegetarian -->
-        <div class="container mt-5 box">
-          <span class="carousel_heading carousel_heading_1">Vegetarian</span>
+        <div class="container mt-2 box">
+          <div class="carousel_heading carousel_heading_1">Vegetarian</div>
           <div
             id="card-carousel-1"
             class="carousel slide"
@@ -124,9 +124,9 @@
         <div id="modal-container"></div>
 
         <!-- card slider for non-vegetarian -->
-        <div class="container mt-5 box">
-          <span class="carousel_heading carousel_heading_1"
-            >Non-vegetarian</span
+        <div class="container mt-2 box">
+          <div class="carousel_heading carousel_heading_1"
+            >Non-vegetarian</div
           >
           <div
             id="card-carousel-2"
@@ -165,8 +165,8 @@
         <div id="modal-container"></div>
 
         <!-- card slider for desserts -->
-        <div class="container mt-5 box">
-          <span class="carousel_heading carousel_heading_1">Desserts</span>
+        <div class="container mt-2 box">
+          <div class="carousel_heading carousel_heading_1">Desserts</div>
           <div
             id="card-carousel-3"
             class="carousel slide"

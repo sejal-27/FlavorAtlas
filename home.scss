@@ -135,7 +135,7 @@ section #text span {
   position: relative;
   display: inline-block;
   transition: all 0.25s;
-  width: 60px;
+  width: 50px;
   height: 50px;
   background: #ffc361;
   box-sizing: border-box;
@@ -172,7 +172,6 @@ section #text span {
     display: none;
     font-size: 1em;
     border-radius: 20px;
-    padding-left: 45px;
     background-color: #ffffff;
     color: #241104;
   }
@@ -241,9 +240,10 @@ section #text span {
   animation: slideInFade 3s ease forwards;
   color: #ff9d00;
   padding: 20px;
-  font-size: 1.75vw;
+  font-size: 2vw;
   font-weight: 500;
   z-index: 1;
+  margin-top: 20%;
 }
 
 // card styling
@@ -468,35 +468,4 @@ body.loading {
     transform: translateX(100%);
     opacity: 0;
   }
-}
-//mediaquery
-
-@media (max-width: 576px) {
-
-  .card {
-    background-color: #ffc361;
-    border: none;
-    margin-top: 10%;
-    .card-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      .card-title {
-        font-size: 1.25em;
-        font-weight: 700;
-      }
-    }
-    .box {
-      scale: 1;
-    }
-  }
-  .carousel_heading {
- margin-top: 10%;
-  padding: 20px;
-  font-size: 1.75vw;
-  font-weight: 500;
-  z-index: 1;
-}
 }

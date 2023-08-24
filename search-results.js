@@ -34,35 +34,43 @@ document.addEventListener("DOMContentLoaded", function () {
   function createResultCard(meal) {
     const resultCard = document.createElement("div");
     resultCard.classList.add("result-card");
+    
+    resultCard.classList.add("mt-4");
+    resultCard.classList.add("card-body");
 
     resultCard.innerHTML = `
-    <div class="container-fluid">
-     <div class="card meal-card" id="meal-card">
-      <div class="result-img">
-        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+            <div class="meal-img" id="meal-img"><img class="img-fluid" src="${
+              meal.strMealThumb
+            } " alt="${meal.strMeal}" /></div>
+            <div class="meal-info text-center" id="meal-info">
+            <div class="meal-header">
+              <h2 class="card-title" id="meal-name"> ${meal.strMeal}</h2>
+              <p class="card-text " id="meal-category">Category: ${
+                meal.strCategory
+              }</p>
+              </div>
+              <ul class="card-text" id="meal-ingredients">
+      ${getIngredientsList(meal)}
+    </ul>
+              <p class="card-text" id="meal-instructions"> ${
+                meal.strInstructions
+              }</p> 
       </div>
-      <div class="result-details">
-        <h3>${meal.strMeal}</h3>
-        <p class="result-category result1">Category: ${meal.strCategory}</p>
-        <p class="result-ingredients result2">Ingredients: ${getIngredients(meal)}</p>
-        <p class="result-instructions result3">Instructions: ${meal.strInstructions}</p>
-      </div>
-      </div>
-      </div>
+     
     `;
 
     return resultCard;
   }
 
-  function getIngredients(meal) {
-    let ingredients = [];
+  function getIngredientsList(meal) {
+    let ingredients = "";
     for (let i = 1; i <= 20; i++) {
       if (meal[`strIngredient${i}`]) {
-        ingredients.push(
-          `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
-        );
+        ingredients += `<li>${meal[`strIngredient${i}`]} - ${
+          meal[`strMeasure${i}`]
+        }</li>`;
       }
     }
-    return ingredients.join(", ");
+    return ingredients;
   }
 });

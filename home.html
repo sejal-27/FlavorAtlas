@@ -22,14 +22,18 @@
     <link rel="stylesheet" href="home.css" />
   </head>
   <body>
+    <!-- loader -->
     <div id="loading-overlay">
       <div class="loader-container">
         <canvas id="pizza"></canvas>
       </div>
     </div>
+    <!-- NavBar -->
     <div class="header" id="header">
       <div class="logo">
-        <a href="#home"><img src="Images/Artboard 1.png" /></a>
+        <a href="#home"
+          ><img src="Images/Artboard 1.png" class="img-fluid"
+        /></a>
       </div>
       <div class="header_content">
         <ul>
@@ -44,21 +48,22 @@
         </ul>
       </div>
     </div>
-    <form id="search-form" class="container-fluid d-flex text-center">
-      <input
-        type="search"
-        placeholder="Search Meals"
-        id="search-input"
-        class="form-control me-2"
-        autocomplete="off"
-        list="suggestions"
-      />
-      <datalist id="suggestions" class="custom-datalist"></datalist>
-      <button type="submit" class="btn btn1 ms-3">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-
+    <div class="container-fluid text-center">
+      <form id="search-form">
+        <input
+          type="search"
+          placeholder="Search Meals"
+          id="search-input"
+          class="form-control me-2"
+          autocomplete="off"
+          list="suggestions"
+        />
+        <datalist id="suggestions" class="custom-datalist"></datalist>
+        <button type="submit" class="btn btn1 ms-3">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+    </div>
     <section>
       
       <h2 id="text">
@@ -84,6 +89,7 @@
       <div
         class="container-fluid d-flex flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row align-items-center justify-content-center box_carousel"
       >
+        <!-- <div class="container-fluid d-flex"> -->
         <!-- card slider for vegetarian -->
         <div class="container mt-2 box">
           <div class="carousel_heading carousel_heading_1">Vegetarian</div>

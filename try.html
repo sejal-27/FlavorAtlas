@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Scrolling Text Effect</title>
+  <title>Meal Filter App</title>
 </head>
 <body>
-  <div class="scrolling-container">
-    <p class="scrolling-text ">Text that appears from the left on scroll...</p>
+  <form id="filter-form">
+    <select id="category-select">
+      <!-- Options will be populated via JavaScript -->
+    </select>
+    <button type="submit">Filter</button>
+  </form>
+  <div id="results-container">
+    <!-- Filtered results will be displayed here -->
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

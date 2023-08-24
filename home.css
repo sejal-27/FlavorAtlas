@@ -7,7 +7,6 @@
 body {
   background-color: #241104;
   width: 100%;
-  overflow-x: hidden;
 }
 
 #header {
@@ -390,6 +389,9 @@ body.loading {
   height: 40vh;
 }
 
+.modal .modal-dialog {
+  padding: 20px;
+}
 .modal .modal-dialog .modal-header {
   display: flex;
   flex-direction: row;
@@ -405,20 +407,22 @@ body.loading {
 .modal .modal-dialog .modal-body {
   display: flex;
   flex-direction: row;
-  gap: 2%;
+  gap: 1em;
   background-color: #241104;
   border: none;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .modal .modal-dialog .modal-body img {
-  height: 30em;
-  width: 30em;
+  height: 100vh;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .modal .modal-dialog .data {
+  width: 50%;
   font-size: 1em;
   color: wheat;
-  justify-content: space-between;
-  align-content: space-between;
 }
 
 @keyframes rollIn {
@@ -447,5 +451,35 @@ body.loading {
   100% {
     transform: translateX(100%);
     opacity: 0;
+  }
+}
+@media (max-width: 576px) {
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-body img {
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .modal-body .data {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .modal-body img {
+    height: 100vh;
+    width: 100% !important;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }/*# sourceMappingURL=home.css.map */

@@ -76,15 +76,15 @@ function openMealModal(mealId) {
       const meal = data.meals[0];
       const modalHtml = `
         <div class="modal fade " id="mealModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-xl ">
-            <div class="modal-content">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content d-flex flex-column">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">${meal.strMeal}</h5>
                 <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close" onclick="removePrevModal()"></button>
               </div>
-              <div class="modal-body">
-                <img src="${meal.strMealThumb}" class="img-fluid" alt="${meal.strMeal}" />
-                <div class="data">
+              <div class="modal-body d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row">
+                <img src="${meal.strMealThumb}" class="meal-img" alt="${meal.strMeal}" />
+                <div class="data  d-flex flex-column">
                   <p><strong>Category:</strong> ${meal.strCategory}</p>
                   <p><strong>Area:</strong> ${meal.strArea}</p>
                   <p><strong>Instructions:</strong> ${meal.strInstructions}</p>
@@ -263,20 +263,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //searchbar
 document.addEventListener("DOMContentLoaded", function () {
-  const searchForm = document.getElementById("search-form");
-  const searchInput = document.getElementById("search-input");
-
-  searchForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const searchTerm = searchInput.value.trim();
-    if (searchTerm !== "") {
-      // Navigate to the new page with the search term as a parameter
-      window.location.href = `search-results.html?searchTerm=${encodeURIComponent(
-        searchTerm
-      )}`;
-    }
-  });
-});
+   const searchForm = document.getElementById("search-form");
+   const searchInput = document.getElementById("search-input");
+   searchForm.addEventListener("submit", function (event) {
+     event.preventDefault();
+     const searchTerm = searchInput.value.trim();
+     if (searchTerm !== "") {
+       // Navigate to the new page with the search term as a parameter
+       window.location.href = `search-results.html?searchTerm=${encodeURIComponent(
+         searchTerm
+       )}`;
+     }
+   });
+ });
 
 //datalist
 const suggestionsList = document.getElementById("suggestions");
@@ -312,15 +311,18 @@ function clearSuggestions() {
   suggestionsList.innerHTML = "";
 }
 
-function populateSuggestions(suggestions) {
-  suggestionsList.innerHTML = "";
-  suggestions.forEach((suggestion) => {
-    const option = document.createElement("option");
-    option.value = suggestion;
-    suggestionsList.appendChild(option);
-  });
-}
+// document.addEventListener("DOMContentLoaded", function () {
+//   const searchForm = document.getElementById("search-form");
+//   const searchInput = document.getElementById("search-input");
 
-function clearSuggestions() {
-  suggestionsList.innerHTML = "";
-}
+//   searchForm.addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     const searchTerm = searchInput.value;
+
+//     if (searchTerm.trim() === "") {
+//       return; // Don't proceed if search term is empty
+//     }
+//     // Redirect to the searchresult page with the search term as query parameter
+//     window.location.href = `search-results.html?search=${encodeURIComponent(searchTerm)}`;
+//   });
+// });

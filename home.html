@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>MealFinder</title>
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.css"
@@ -19,9 +19,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Roboto+Flex&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Roboto+Flex&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="home.css" />
   </head>
   <body>
@@ -32,6 +35,7 @@
       </div>
     </div>
     <!-- NavBar -->
+    <div class="overlay"></div>
     <div class="header" id="header">
       <div class="logo">
         <a href="#home"
@@ -50,11 +54,43 @@
           <!-- <li class="btn from-top"><a href="#">Filter</a></li> -->
         </ul>
       </div>
+
+      <nav class="navbar navbar-expand-sm">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon" ></span>
+        </button>
+
+        <!-- Navigation drawer content -->
+        <div class="header_drawer">
+          <ul class="navbar-nav">
+            <li class="btn from-top"><a href="#header">Home</a></li>
+            <li class="btn from-top"><a href="#recipies">Recipes</a></li>
+            <li class="btn from-top">
+              <a href="random_meal.html"
+                ><i
+                  class="fa-solid fa-dice"
+                  style="color: #ffc361; scale: 2"
+                ></i
+              ></a>
+            </li>
+            <!-- <li class="btn from-top"><a href="#">Filter</a></li> -->
+          </ul>
+        </div>
+      </nav>
     </div>
+
     <div class="container-fluid text-center">
-     <form id="search-form" action="search-results.html">
+      <form id="search-form" action="search-results.html">
         <input
-        name="search"
+          name="search"
           type="search"
           placeholder="Search Meals"
           id="search-input"
@@ -90,7 +126,7 @@
 
       <!--Card slider-->
       <div
-        class="container-fluid d-flex flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row carousel_box"
+        class="container-fluid d-flex flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row carousel_box mb-3"
       >
         <!-- <div class="container-fluid d-flex"> -->
         <!-- card slider for vegetarian -->
@@ -215,7 +251,61 @@
     </div>
     <!-- footer -->
     <div class="footer">
-      <img
+      <div class="footer_text">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <h6>About This Project</h6>
+              <p>
+                This Meal Finder is the result of my internship project,
+                showcasing my passion for frontend development. Through this
+                project, I've demonstrated my skills in HTML, JavaScript, SCSS,
+                and Bootstrap to create an interactive and user-friendly
+                platform for exploring delicious meals and recipes.
+              </p>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <h6>Contact Me</h6>
+              <p>
+                Feel free to connect with me if you have any questions,
+                suggestions, or opportunities for collaboration. I'm excited to
+                continue refining my skills and creating more impactful projects
+                in the future.
+              </p>
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fa fa-envelope"></i
+                  ><a
+                    href="sejall2709@gmail.com"
+                    class="hover-underline-animation"
+                    >sejall2709@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <i class="fa-brands fa-linkedin" style="color: #c57001"></i>
+                  <a
+                    class="hover-underline-animation"
+                    href="https://www.linkedin.com/in/sejal-thakur-217a9b213/"
+                    >Sejal Thakur</a
+                  >
+                </li>
+                <li>
+                  <i
+                    class="fa-brands fa-square-github"
+                    style="color: #c57001"
+                  ></i
+                  ><a
+                    class="hover-underline-animation"
+                    href="https://github.com/sejal-27"
+                    >sejal-27</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <img
         class="mainimg img-fluid"
         src="Pngs/kisspng-table-ice-cream-cone-food-drink-a-table-of-food-5a9811c03b0456.0613783615199154562417.png"
       />
@@ -223,7 +313,7 @@
         class="tableimg img-fluid"
         src="Pngs/kisspng-table-floor-wood-stain-plywood-hd-desktop-wood-material-free-download-5aa1ff280bc156.7334948815205660560482.png"
         alt=""
-      />
+      /> -->
     </div>
 
     <script src="home.js"></script>

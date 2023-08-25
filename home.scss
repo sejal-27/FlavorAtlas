@@ -109,7 +109,7 @@ body {
   position: fixed;
   top: 0;
   right: -300px; /* Position off-screen initially */
-  width: 250px; /* Set desired width */
+  width: 200px; /* Set desired width */
   height: 100vh; /* Set full viewport height */
   transition: left 0.3s ease-in-out; /* Smooth transition animation */
   z-index: 1000; /* Higher z-index to overlay other content */
@@ -503,15 +503,7 @@ section #text span {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-  // .mainimg {
-
-  // }
-  // .tableimg {
-  //   position:absolute;
-  //   bottom: 0;
-  //   width: 100vw;
-  //   height: 60vh;
-  // }
+ 
 }
 
 .modal {
@@ -653,9 +645,6 @@ section #text span {
   .carousel_heading{
     font-size: 1em! important;
   }
-  // .section_2 .h2{
-  //   font-size: 1em;
-  // }
 
   
 }

@@ -93,7 +93,7 @@ body {
   position: fixed;
   top: 0;
   right: -300px; /* Position off-screen initially */
-  width: 250px; /* Set desired width */
+  width: 200px; /* Set desired width */
   height: 100vh; /* Set full viewport height */
   transition: left 0.3s ease-in-out; /* Smooth transition animation */
   z-index: 1000; /* Higher z-index to overlay other content */

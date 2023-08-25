@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       searchResults.innerHTML = "No results found.";
     }
   }
-
+ 
   function createResultCard(meal) {
     const resultCard = document.createElement("div");
     resultCard.classList.add("result-card");

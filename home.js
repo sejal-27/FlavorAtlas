@@ -118,6 +118,22 @@ function openMealModal(mealId) {
       console.error("Error fetching meal details:", error);
     });
 }
+//drawer
+document.addEventListener("DOMContentLoaded", function () {
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const headerDrawer = document.querySelector(".header_drawer");
+  const overlay = document.querySelector(".overlay");
+
+  navbarToggler.addEventListener("click", function () {
+    headerDrawer.classList.toggle("active");
+    overlay.classList.toggle("active");
+  });
+
+  overlay.addEventListener("click", function () {
+    headerDrawer.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+});
 
 //loader
 ("use strict");

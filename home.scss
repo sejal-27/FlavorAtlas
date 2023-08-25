@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Mukta', sans-serif;
-font-family: 'Roboto Flex', sans-serif;
+  font-family: "Mukta", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
 }
 body {
   background-color: #241104;
@@ -101,7 +101,77 @@ body {
     }
   }
 }
+//drawer
+/* Add this CSS to your existing styles */
+.header_drawer {
+  background-color: #492900; /* Semi-transparent background */
+  position: fixed;
+  top: 0;
+  left: -300px; /* Position off-screen initially */
+  width: 250px; /* Set desired width */
+  height: 100vh; /* Set full viewport height */
+  transition: left 0.3s ease-in-out; /* Smooth transition animation */
+  z-index: 1000; /* Higher z-index to overlay other content */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
 
+.header_drawer.active {
+  left: 0; /* Show the navigation drawer on active class */
+}
+
+/* Style the navigation items */
+.header_drawer ul.navbar-nav {
+  padding-top: 2em;
+  list-style: none;
+  text-align: center;
+
+}
+.navbar-toggler-icon{
+  background-color:#ff9d00!important;
+  border-radius: 5px;
+
+}
+.header_drawer ul.navbar-nav li {
+  margin-bottom: 1em;
+}
+
+.header_drawer ul.navbar-nav li a {
+  color: #fff;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+/* Add an overlay class to the body when the drawer is active */
+.overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Higher z-index than navbar */
+  display: none;
+}
+
+.overlay.active {
+  display: block; /* Show the overlay on active class */
+}
+
+@media (max-width: 576px) {
+  .header_drawer {
+    transform: translateX(0);
+  }
+
+  .header_content {
+    display: none;
+  }
+}
+@media (min-width: 576px) {
+  .navbar {
+    display: none;
+  }
+}
 //hero section
 section {
   position: relative;
@@ -118,13 +188,14 @@ section .img-3 {
   object-fit: cover;
 }
 section #text {
+  top:20;
   position: absolute;
   color: #ff9d00;
   text-shadow: 10px 5px 50px rgb(0, 0, 0);
   font-size: 7em;
   text-align: center;
   line-height: 0.8em;
-  transform: translateY(-60%);
+  transform: translateY(-50%);
   overflow: visible;
 }
 section #text span {
@@ -384,26 +455,62 @@ section #text span {
 }
 
 .footer {
-  position: relative;
-  margin-top: 20%;
-  height: 20vh;
-  width: 100vw;
-  .mainimg {
-    position: absolute;
+  margin-top: 8em;
+  width: 100%;
 
-    margin-top: 20%;
-    background-size: contain;
-    width: 30%;
-    right: 0;
-    bottom: 25%;
-    z-index: 1;
-  }
-  .tableimg {
-    position: absolute;
+  .footer_text {
+    z-index: 2;
     bottom: 0;
+    color: #c57001;
+    background-color: #1a0e07;
     width: 100vw;
-    height: 40vh;
+
+    padding: 10px;
+    p {
+      font-size: 0.75em;
+      margin-bottom: 0;
+    }
+    ul {
+      font-size: 0.75em;
+      a {
+        text-decoration: none;
+        color: #c57001;
+      }
+    }
   }
+  //footer hover animation
+  .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #c57001;
+  }
+
+  .hover-underline-animation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #c57001;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  // .mainimg {
+
+  // }
+  // .tableimg {
+  //   position:absolute;
+  //   bottom: 0;
+  //   width: 100vw;
+  //   height: 60vh;
+  // }
 }
 
 .modal {

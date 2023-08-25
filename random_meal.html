@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your random meal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Roboto+Flex&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.css"
@@ -26,18 +32,19 @@
           </div>
         </div>
         <div class="card mt-4 meal-card" id="meal-card">
-          <div class="card-body text-center">
-            <div class="meal-img img-fluid" id="meal-img"></div>
+          <div
+            class="card-body d-flex flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row"
+          >
+            <div class="meal-img" id="meal-img"></div>
             <div class="meal-info" id="meal-info">
               <h2 class="card-title" id="meal-name"></h2>
               <p class="card-text" id="meal-category"></p>
               <p class="card-text" id="meal-ingredients"></p>
               <p class="card-text" id="meal-instructions"></p>
-               <button class="btn button mt-4" id="fetch-random-meal">
-              Fetch another meal
-            </button>
+              <button class="btn button mt-4" id="fetch-random-meal">
+                Fetch another meal
+              </button>
             </div>
-           
           </div>
         </div>
       </div>

@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Mukta", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
 }
 
 body {
@@ -241,13 +243,14 @@ section #text span {
   display: inline-block;
   padding: 8px 16px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   border: none;
   cursor: pointer;
   background-color: #995701;
   color: #ffffff;
   border-radius: 4px;
   position: relative;
+  overflow: hidden;
   margin-top: 1em;
 }
 .card .card-body .btn::before {
@@ -374,6 +377,9 @@ section #text span {
   height: 40vh;
 }
 
+.modal .modal-dialog {
+  padding: 20px;
+}
 .modal .modal-dialog .modal-header {
   display: flex;
   flex-direction: row;
@@ -389,20 +395,22 @@ section #text span {
 .modal .modal-dialog .modal-body {
   display: flex;
   flex-direction: row;
-  gap: 2%;
+  gap: 1em;
   background-color: #241104;
   border: none;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .modal .modal-dialog .modal-body img {
-  height: 30em;
-  width: 30em;
+  height: 100vh;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .modal .modal-dialog .data {
+  width: 50%;
   font-size: 1em;
   color: wheat;
-  justify-content: space-between;
-  align-content: space-between;
 }
 
 @keyframes rollIn {
@@ -460,5 +468,35 @@ section #text span {
   }
   .text_2 h2 {
     font-size: 3em !important;
+  }
+}
+@media (max-width: 576px) {
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-body img {
+    height: 70vh !important;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media (max-width: 992px) {
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .modal-body img {
+    height: 80vh !important;
+    width: 100% !important;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .modal .modal-dialog .data {
+    width: 100% !important;
   }
 }/*# sourceMappingURL=home.css.map */

@@ -11,6 +11,8 @@ body {
   padding: 0;
   background-color: #241104;
   box-sizing: border-box;
+  font-family: 'Mukta', sans-serif;
+font-family: 'Roboto Flex', sans-serif;
 }
 
 #loading-overlay {
@@ -108,7 +110,7 @@ body.loading {
   width: 100%;
 }
 .meal-img {
-  height: 100vh auto;
+  height: 100vh ;
   width: 50%;
   background-position: center;
   background-size: cover;
@@ -124,8 +126,7 @@ body.loading {
 h2 {
   font-size: 1.5em;
   color: #241104;
-  font-weight: 750;
-  text-transform: uppercase;
+  font-weight: 500;
 }
 #meal-category {
   color: #241104;
@@ -229,7 +230,7 @@ h2 {
 left: 0;
   .text_2 h2 {
     text-shadow: 10px 5px 50px rgba(0, 0, 0, 0.925);
-    font-size: 3vw;
+    font-size: 3em;
     color: #ff9d00;
     position: relative;
   }
@@ -322,4 +323,26 @@ left: 0;
   left: 60%;
   bottom: 0%;
   animation-duration: 2.5s;
+}
+@media (max-width:576px) {
+ 
+.card-body{
+    align-items: center;
+    justify-content: center;
+}
+
+.meal-img {
+  height: 100vh;
+  width: 100%;
+}
+
+.meal-info {
+  width: 100%;
+}
+
+}
+@media (max-width:768px) {
+  .text_2 h2{
+    font-size:  3em !important;
+   }
 }

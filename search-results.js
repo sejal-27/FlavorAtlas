@@ -1,74 +1,70 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   const searchResults = document.getElementById("search-results");
+  const queryParams = new URLSearchParams(window.location.search);
+  const searchTerm = queryParams.get("searchTerm"); // Use "searchTerm" instead of "search"
 
-  const searchTerm = getQueryParam("searchTerm");
-
-  if (searchTerm) {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
-      .then((response) => response.json())
-      .then((data) => {
-        displaySearchResults(data.meals);
-      })
-      .catch((error) => {
-        console.error("Error fetching search results:", error);
-      });
+  if (!searchTerm) {
+    searchResults.innerHTML = "No search term found.";
+    return;
   }
 
-  function getQueryParam(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
+  try {
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`);
+    const data = await response.json();
+
+    if (data.meals) {
+      displaySearchResults(data.meals);
+    } else {
+      searchResults.innerHTML = "No results found.";
+    }
+  } catch (error) {
+    console.error("Error fetching search results:", error);
   }
 
   function displaySearchResults(meals) {
     searchResults.innerHTML = "";
-    if (meals) {
-      meals.forEach((meal) => {
-        const resultCard = createResultCard(meal);
-        searchResults.appendChild(resultCard);
-      });
-    } else {
-      searchResults.innerHTML = "No results found.";
-    }
+
+    meals.forEach((meal) => {
+      const resultCard = createResultCard(meal);
+      searchResults.appendChild(resultCard);
+    });
   }
- 
-  function createResultCard(meal) {
+
+  function createResultCard(mealData) {
     const resultCard = document.createElement("div");
     resultCard.classList.add("result-card");
-    
     resultCard.classList.add("mt-4");
     resultCard.classList.add("card-body");
+    resultCard.classList.add("d-flex");
+    resultCard.classList.add("flex-column");
+    resultCard.classList.add("flex-sm-row");
+    resultCard.classList.add("flex-md-row");
+    resultCard.classList.add("flex-lg-row");
+    resultCard.classList.add("flex-xl-row");
+        
 
     resultCard.innerHTML = `
-            <div class="meal-img" id="meal-img"><img class="img-fluid" src="${
-              meal.strMealThumb
-            } " alt="${meal.strMeal}" /></div>
-            <div class="meal-info text-center" id="meal-info">
-            <div class="meal-header">
-              <h2 class="card-title" id="meal-name"> ${meal.strMeal}</h2>
-              <p class="card-text " id="meal-category">Category: ${
-                meal.strCategory
-              }</p>
-              </div>
-              <ul class="card-text" id="meal-ingredients">
-      ${getIngredientsList(meal)}
-    </ul>
-              <p class="card-text" id="meal-instructions"> ${
-                meal.strInstructions
-              }</p> 
+      <div class="meal-img" style="background-image: url(${mealData.strMealThumb})"></div>
+      <div class="meal-info text-center">
+        <div class="meal-header">
+          <h2 class="card-title ">${mealData.strMeal}</h2>
+          <p class="card-text" id="meal-category">Category: ${mealData.strCategory}</p>
+        </div>
+        <ul class="card-text" id="meal-ingredients">
+          ${getIngredientsList(mealData)}
+        </ul>
+        <p class="card-text" id="meal-instructions">${mealData.strInstructions}</p>
       </div>
-     
     `;
 
     return resultCard;
   }
 
-  function getIngredientsList(meal) {
+  function getIngredientsList(mealData) {
     let ingredients = "";
     for (let i = 1; i <= 20; i++) {
-      if (meal[`strIngredient${i}`]) {
-        ingredients += `<li>${meal[`strIngredient${i}`]} - ${
-          meal[`strMeasure${i}`]
-        }</li>`;
+      if (mealData[`strIngredient${i}`]) {
+        ingredients += `<li>${mealData[`strIngredient${i}`]} - ${mealData[`strMeasure${i}`]}</li>`;
       }
     }
     return ingredients;

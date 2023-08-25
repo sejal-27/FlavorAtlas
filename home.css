@@ -92,7 +92,7 @@ body {
   color: #1a0e07; /* Semi-transparent background */
   position: fixed;
   top: 0;
-  left: -300px; /* Position off-screen initially */
+  right: -300px; /* Position off-screen initially */
   width: 250px; /* Set desired width */
   height: 100vh; /* Set full viewport height */
   transition: left 0.3s ease-in-out; /* Smooth transition animation */
@@ -101,7 +101,7 @@ body {
 }
 
 .header_drawer.active {
-  left: 0; /* Show the navigation drawer on active class */
+  right: 0; /* Show the navigation drawer on active class */
 }
 
 /* Style the navigation items */

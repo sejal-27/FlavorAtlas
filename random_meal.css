@@ -92,6 +92,7 @@ body.loading {
   background-color: #fcddba;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  margin: 20px;
 }
 
 .card-body {
@@ -330,6 +331,6 @@ h2 {
 }
 @media (max-width: 768px) {
   .text_2 h2 {
-    font-size: 3em !important;
+    font-size: 2em !important;
   }
 }/*# sourceMappingURL=random_meal.css.map */

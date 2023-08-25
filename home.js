@@ -277,6 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 1500);
 });
 
+
 //searchbar
 document.addEventListener("DOMContentLoaded", function () {
   const searchForm = document.getElementById("search-form");

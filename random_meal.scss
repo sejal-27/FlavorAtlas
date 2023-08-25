@@ -103,11 +103,13 @@ body.loading {
   background-color:#fcddba;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  margin: 20px;
 }
 .card-body{
     display: flex;
   flex-direction: row;
   width: 100%;
+  
 }
 .meal-img {
   height: 100vh ;
@@ -343,6 +345,6 @@ left: 0;
 }
 @media (max-width:768px) {
   .text_2 h2{
-    font-size:  3em !important;
+    font-size:  2em !important;
    }
 }

@@ -277,6 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 1500);
 });
 
+//filter
 
 //searchbar
 document.addEventListener("DOMContentLoaded", function () {

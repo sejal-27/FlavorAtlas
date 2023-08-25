@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MealFinder</title>
+    <title>Meal-finder</title>
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.css"
@@ -44,7 +44,6 @@
       </div>
       <div class="header_content">
         <ul>
-          
           <li class="btn from-top"><a href="#header">Home</a></li>
           <li class="btn from-top"><a href="#recipies">Recipes</a></li>
           <li class="btn from-top">
@@ -66,20 +65,23 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon" ></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Navigation drawer content -->
         <div class="header_drawer">
           <ul class="navbar-nav">
-           
             <li class="btn from-top"><a href="#header">Home</a></li>
             <li class="btn from-top"><a href="#recipies">Recipes</a></li>
             <li class="btn from-top">
-              <a href="random_meal.html"
+              <a
+                href="random_meal.html"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Click to Generate Random Meal"
                 ><i
                   class="fa-solid fa-dice"
-                  style="color: #160e00; scale: 2"
+                  style="color: #311e00; scale: 2"
                 ></i
               ></a>
             </li>

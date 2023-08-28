@@ -295,6 +295,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//search input validation
+function validateSearch() {
+  const searchInput = document.getElementById("search-input");
+  const searchTerm = searchInput.value.trim();
+
+  if (searchTerm === "") {
+    // Display an error message or alert if needed
+    alert("Please enter a search term.");
+    return false; // Prevent form submission
+  }
+
+  // If the search term is not empty, allow form submission
+  return true;
+}
+
+
 //datalist
 const suggestionsList = document.getElementById("suggestions");
 const searchInput = document.getElementById("search-input");

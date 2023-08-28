@@ -190,4 +190,17 @@ body {
   .text_2 h2 {
     font-size: 3em !important;
   }
+}
+.no_result {
+  height: 35em;
+  width: 40em;
+}
+
+.btn-result {
+  color: #ffffff;
+  border: 1px solid #ffc464;
+  border-radius: 5px;
+}
+.btn-result:hover {
+  background-color: rgba(255, 157, 0, 0.7333333333);
 }/*# sourceMappingURL=search-results.css.map */

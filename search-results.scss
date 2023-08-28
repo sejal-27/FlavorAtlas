@@ -201,3 +201,16 @@ left: 0;
     font-size:  3em !important;
    }
 }
+
+.no_result{
+  height: 35em;
+  width: 40em;
+}
+.btn-result{
+  color: #ffffff;
+  border:1px solid #ffc464;
+  border-radius: 5px;
+  &:hover{
+    background-color: #ff9d00bb;
+  }
+}

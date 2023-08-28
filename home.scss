@@ -145,7 +145,6 @@ body {
 /* Add an overlay class to the body when the drawer is active */
 .overlay {
   position: fixed;
-
   top: 0;
   left: 0;
   width: 100%;
@@ -154,6 +153,7 @@ body {
   z-index: 999; /* Higher z-index than navbar */
   display: none;
 }
+
 
 .overlay.active {
   display: block; /* Show the overlay on active class */

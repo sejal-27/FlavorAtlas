@@ -648,3 +648,10 @@ section #text span {
 
   
 }
+@media (min-width: 576px){
+#header {
+    margin-left: 2em;
+    margin-right: 2em;
+    justify-content: space-between;
+}
+}

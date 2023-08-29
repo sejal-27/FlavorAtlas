@@ -656,3 +656,8 @@ section #text span {
     max-height: 40vh;
   }
 }
+@media (max-width:233px){
+  section #text span {
+    letter-spacing: 0px;
+  }
+}

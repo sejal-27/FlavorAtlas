@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Mukta", sans-serif;
   font-family: "Roboto Flex", sans-serif;
+  overflow-x: hidden;
 }
 body {
   background-color: #241104;
@@ -105,7 +106,7 @@ body {
 /* Add this CSS to your existing styles */
 .header_drawer {
   background-color: #ffb24d;
-  color:#1a0e07; /* Semi-transparent background */
+  color: #1a0e07; /* Semi-transparent background */
   position: fixed;
   top: 0;
   right: -300px; /* Position off-screen initially */
@@ -125,19 +126,17 @@ body {
   padding-top: 2em;
   list-style: none;
   text-align: center;
-
 }
-.navbar-toggler-icon{
-  background-color:#ff9d00!important;
+.navbar-toggler-icon {
+  background-color: #ff9d00 !important;
   border-radius: 5px;
-
 }
 .header_drawer ul.navbar-nav li {
   margin-bottom: 1em;
 }
 
 .header_drawer ul.navbar-nav li a {
-   color:#1a0e07;
+  color: #1a0e07;
   font-size: 1.2em;
   text-decoration: none;
 }
@@ -153,7 +152,6 @@ body {
   z-index: 999; /* Higher z-index than navbar */
   display: none;
 }
-
 
 .overlay.active {
   display: block; /* Show the overlay on active class */
@@ -189,7 +187,7 @@ section .img-3 {
   object-fit: cover;
 }
 section #text {
-  top:20;
+  top: 20;
   position: absolute;
   color: #ff9d00;
   text-shadow: 10px 5px 50px rgb(0, 0, 0);
@@ -220,6 +218,7 @@ section #text span {
   box-sizing: border-box;
   border-radius: 25px;
   border: 4px solid #ff9d00;
+  overflow: hidden;
 
   /* Searchbar interaction */
   &:hover,
@@ -503,7 +502,6 @@ section #text span {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
- 
 }
 
 .modal {
@@ -638,20 +636,18 @@ section #text span {
   }
 }
 
-@media (max-width:280px) {
+@media (max-width: 280px) {
   section {
-  min-height: 40vh;
+    min-height: 40vh;
   }
-  .carousel_heading{
-    font-size: 1em! important;
+  .carousel_heading {
+    font-size: 1em !important;
   }
-
-  
 }
-@media (min-width:1400px){
-#header {
+@media (min-width: 1400px) {
+  #header {
     margin-left: 4em;
     margin-right: 4em;
     justify-content: space-between;
-}
+  }
 }

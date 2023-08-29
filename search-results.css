@@ -1,9 +1,12 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: #241104;
   box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #241104;
   font-family: "Mukta", sans-serif;
   font-family: "Roboto Flex", sans-serif;
 }
@@ -203,4 +206,11 @@ body {
 }
 .btn-result:hover {
   background-color: rgba(255, 157, 0, 0.7333333333);
+}
+
+@media (max-width: 768px) {
+  .no_result {
+    height: 15rem;
+    width: 15rem;
+  }
 }/*# sourceMappingURL=search-results.css.map */

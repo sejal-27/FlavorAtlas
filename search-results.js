@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
   const searchResults = document.getElementById("search-results");
   const queryParams = new URLSearchParams(window.location.search);
-  const ifnoresult= document.getElementById("result_main")
+  const ifnoresult = document.getElementById("result_main");
   const searchTerm = queryParams.get("searchTerm"); // Use "searchTerm" instead of "search"
 
   if (!searchTerm) {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (data.meals) {
       displaySearchResults(data.meals);
     } else {
-      ifnoresult.innerHTML = `<div class="d-flex flex-column m-auto p-2"><img src="Pngs/pagenotfound (1).png" class="no_result m-auto" > <a href="index.html" class="btn btn-result p-2">Go back to Home</a></div>`;
+      ifnoresult.innerHTML = `<div class="d-flex flex-column justify-content-center align-items-center m-auto"><img src="Pngs/pagenotfound (1).png" class="no_result d-flex justify-content-center align-items-center m-auto" > <a href="index.html" class="btn btn-result p-2">Go back to Home</a></div>`;
       //////////////////////
       // ifnoresult.innerHTML = ` <div class="d-flex align-items-center justify-content-center result_img""><img src="Pngs/pagenotfound (1).png"> class="no_result" > </div>`;
     }

@@ -4,13 +4,15 @@ $color-shadow: rgb(212, 212, 212);
 $pan-color-light: #b9602c;
 $pan-color-dark: #fa5f17;
 $loader-color: #fdd835;
+*{
+   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
+}
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #241104;
-  box-sizing: border-box;
   font-family: 'Mukta', sans-serif;
 font-family: 'Roboto Flex', sans-serif;
 }
@@ -213,4 +215,11 @@ left: 0;
   &:hover{
     background-color: #ff9d00bb;
   }
+}
+@media (max-width:768px) {
+  .no_result{
+  height: 15rem;
+  width: 15rem;
+  }
+  
 }
